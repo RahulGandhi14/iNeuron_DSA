@@ -1,21 +1,19 @@
-def findSqrt(num):
+def isPerfectSquare(self, num: int) -> bool:
+    if(num==1 or num==0): return num
+    
     left = 0
     right = num//2
-
-    if(num == 1):
-        return 1
 
     while left <= right:
         mid = left + (right-left)//2
         sqrt = mid*mid
         if(sqrt == num):
-            return mid
+            return True
         elif sqrt > num:
             right = mid - 1
         else:
-            if((mid+1)*(mid+1)>num):
-                return mid
             left = mid + 1
+    return False
 
-print(findSqrt(0))
-    
+print(isPerfectSquare(16))
+print(isPerfectSquare(14))
