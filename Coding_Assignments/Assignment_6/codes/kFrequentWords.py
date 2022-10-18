@@ -1,3 +1,5 @@
+# PROBLEM 2
+
 from functools import cmp_to_key
 import collections, heapq
 
@@ -45,7 +47,7 @@ def kFrequentWords(words, k):
     return words
 
 
-# print(kFrequentWords(words, 4))
+print("APPROACH 1:", kFrequentWords(words, 4))
 
 
 # APPROACH 2
@@ -56,4 +58,4 @@ def kFrequentWords2(words, k):
     return heapq.nsmallest(k, Freqs, key=lambda word: (-Freqs[word], word))
 
 
-print(kFrequentWords2(words, 4))
+print("APPROACH 2:", kFrequentWords2(words, 4))
