@@ -52,10 +52,24 @@ print("APPROACH 1:", kFrequentWords(words, 4))
 
 # APPROACH 2
 
+words = [
+    "yellowShirt",
+    "redHat",
+    "blackShirt",
+    "bluePants",
+    "redHat",
+    "pinkHat",
+    "blackShirt",
+    "yellowShirt",
+    "greenPants",
+    "greenPants",
+    "greenPants",
+]
+
 
 def kFrequentWords2(words, k):
     Freqs = collections.Counter(words)
     return heapq.nsmallest(k, Freqs, key=lambda word: (-Freqs[word], word))
 
 
-print("APPROACH 2:", kFrequentWords2(words, 4))
+print("APPROACH 2:", kFrequentWords2(words, 1))
