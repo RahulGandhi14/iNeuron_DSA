@@ -1,4 +1,7 @@
-## Time Complexity: O(n)
+## length of left sub arr - n1
+## length of right sub arr - n2
+## total - n1 + n2 = N
+## Time Complexity: O(N)
 def merge_combine(arr, left, mid, right):
     ## length of first sub array
     n1 = mid - left + 1
