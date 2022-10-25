@@ -21,7 +21,7 @@ class heap:
         element = self.peek()
         self.swap(0, len(self.heapArr) - 1)
         del self.heapArr[len(self.heapArr) - 1]
-        self.heapify(len(self.heapArr), 0)
+        self.buildHeap()
         return element
 
     def peek(self):
@@ -47,21 +47,23 @@ class heap:
 
 
 # K Largest
-nums = [40, 25, 68, 79, 52, 66, 89, 97]
-# heapArr = heap(nums)
+nums = [3, 2, 1, 5, 6, 4]
+heapArr = heap(nums)
+
+k = 2
+largest = None
+for i in range(k):
+    largest = heapArr.pop()
+
+print(largest)
+
+
+# K Smallest
+# heapArr = heap([n * -1 for n in nums])
+# heapArr.printArr()
 
 # k = 2
 # for i in range(k - 1):
 #     heapArr.pop()
 
-# print(heapArr.peek())
-
-# K Smallest
-heapArr = heap([n * -1 for n in nums])
-heapArr.printArr()
-
-k = 2
-for i in range(k - 1):
-    heapArr.pop()
-
-print(heapArr.peek() * -1)
+# print(heapArr.peek() * -1)
