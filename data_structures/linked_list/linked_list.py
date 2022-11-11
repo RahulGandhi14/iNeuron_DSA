@@ -13,8 +13,7 @@ class LinkedList:
 
         # Creating cycle
         if createCycle:
-            if value == 5:
-                node.next = self.head
+            node.next = self.head
 
         if self.head is None:
             self.head = node
@@ -40,13 +39,13 @@ class LinkedList:
 
     def detectCycle(self):
         slower = self.head
-        faster = self.head.next
+        faster = None if self.head is None else self.head.next
 
         while faster != slower and (faster is not None and slower is not None):
             slower = slower.next
-            faster = faster.next.next
+            faster = None if faster.next is None else faster.next.next
 
-        if faster == slower:
+        if faster == slower and self.head is not None:
             return True
         else:
             return False
@@ -62,18 +61,20 @@ class LinkedList:
 llist = LinkedList()
 llist.add(1)
 llist.add(2)
-llist.add(3)
-llist.add(4)
-llist.add(5)
+# llist.add(3)
+# llist.add(4)
+# llist.add(5)
 
 # Create cycle
 # llist.add(6, True)
 
 doesCycleExist = llist.detectCycle()
-if not doesCycleExist:
 
-    llist.display()
-    llist.reverse()
-    llist.display()
+if not doesCycleExist:
+    print("Does cycle exist?", "Yes" if doesCycleExist else "No")
+    if llist.head is not None:
+        llist.display()
+        llist.reverse()
+        llist.display()
 else:
     print("Does cycle exist?", "Yes" if doesCycleExist else "No")
