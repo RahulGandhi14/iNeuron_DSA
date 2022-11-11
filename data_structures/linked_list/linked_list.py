@@ -29,7 +29,7 @@ class LinkedList:
         current = self.head
         right = self.head
 
-        while right is not None:
+        while current:
             right = current.next
             current.next = left
             left = current
@@ -61,8 +61,8 @@ class LinkedList:
 llist = LinkedList()
 llist.add(1)
 llist.add(2)
-# llist.add(3)
-# llist.add(4)
+llist.add(3)
+llist.add(4)
 # llist.add(5)
 
 # Create cycle
