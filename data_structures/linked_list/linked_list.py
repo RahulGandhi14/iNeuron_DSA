@@ -50,7 +50,7 @@ class LinkedList:
         else:
             return False
 
-    def deleteNodeAtPos(self, idx):
+    def deleteNodeAtIdx(self, idx):
         if self.head is None:
             return
 
@@ -71,11 +71,20 @@ class LinkedList:
     def count(self):
         numOfNodes = 0
         curr = self.head
-        while curr is not None:
+        while curr:
             numOfNodes += 1
             curr = curr.next
 
         return numOfNodes
+
+    def search(self, val):
+        curr = self.head
+        while curr:
+            if curr.value == val:
+                return True
+            curr = curr.next
+
+        return False
 
     def display(self):
         current = self.head
@@ -103,7 +112,9 @@ if not doesCycleExist:
     if llist.head is not None:
         llist.display()
         # llist.reverse()
-        llist.deleteNodeAtPos(4)
+        print("Does 5 exist?", llist.search(5))
+        llist.deleteNodeAtIdx(4)
+        print("Does 5 exist?", llist.search(5))
         print("Number of Nodes:", llist.count())
         llist.display()
 else:
