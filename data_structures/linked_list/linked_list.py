@@ -50,6 +50,11 @@ class LinkedList:
         else:
             return False
 
+    """
+    Time Complexity(Worst Case - End): O(n)
+    Best Case: O(1)
+    """
+
     def deleteNodeAtIdx(self, idx):
         if self.head is None:
             return
@@ -68,6 +73,7 @@ class LinkedList:
             curr.next = tempPtr
             del tempPtr
 
+    # TimeComplexity: O(n)
     def count(self):
         numOfNodes = 0
         curr = self.head
@@ -77,6 +83,7 @@ class LinkedList:
 
         return numOfNodes
 
+    # TimeComplexity: O(n)
     def search(self, val):
         curr = self.head
         while curr:
@@ -94,28 +101,29 @@ class LinkedList:
         print(end="\n")
 
 
-llist = LinkedList()
-llist.add(1)
-llist.add(2)
-llist.add(3)
-llist.add(4)
-llist.add(5)
-print("Number of Nodes:", llist.count())
+if __name__ == "__main__":
+    llist = LinkedList()
+    llist.add(1)
+    llist.add(2)
+    llist.add(3)
+    llist.add(4)
+    llist.add(5)
+    print("Number of Nodes:", llist.count())
 
-# Create cycle
-# llist.add(6, True)
+    # Create cycle
+    # llist.add(6, True)
 
-doesCycleExist = llist.detectCycle()
+    doesCycleExist = llist.detectCycle()
 
-if not doesCycleExist:
-    print("Does cycle exist?", "Yes" if doesCycleExist else "No")
-    if llist.head is not None:
-        llist.display()
-        # llist.reverse()
-        print("Does 5 exist?", llist.search(5))
-        llist.deleteNodeAtIdx(4)
-        print("Does 5 exist?", llist.search(5))
-        print("Number of Nodes:", llist.count())
-        llist.display()
-else:
-    print("Does cycle exist?", "Yes" if doesCycleExist else "No")
+    if not doesCycleExist:
+        print("Does cycle exist?", "Yes" if doesCycleExist else "No")
+        if llist.head is not None:
+            llist.display()
+            # llist.reverse()
+            print("Does 5 exist?", llist.search(5))
+            llist.deleteNodeAtIdx(4)
+            print("Does 5 exist?", llist.search(5))
+            print("Number of Nodes:", llist.count())
+            llist.display()
+    else:
+        print("Does cycle exist?", "Yes" if doesCycleExist else "No")
