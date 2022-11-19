@@ -2,6 +2,11 @@
 
 
 def removeNthFromEnd(head, n):
+    # Here we're initializing start with dummy node because
+    # When we'll require to remove node at possition n where
+    # n = Length of the given linked list
+    # Our approach would fail to get node.next value
+    # To preven this, we're initializing it with the dummy node
     start = Node()
     slow = start
     fast = start
