@@ -21,7 +21,7 @@ class HashTable:
     def __setitem__(self, key, value):
         id = self.hash_function(key)
         seed = 1
-        while self.arr[id] is not None:
+        while self.arr[id] is not None and self.arr[id][0] != key:
             id = self.collision_resolver(id, seed)
             seed += 1
 
