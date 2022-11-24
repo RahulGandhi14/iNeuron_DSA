@@ -58,4 +58,32 @@ def divide(dividend, divisor):
     return min(2147483647, max(-2147483648, result))
 
 
+"""
+Let n be the absolute value of dividend.
+Time Complexity: 0(log^2 n)
+We started by performing an exponential search to find the biggest number that fits into
+the current dividend. So, for this time complexity is o(log n) operations
+After doing this search, we updated the dividend by subtracting the number we found.
+In the worst case, we were left with a dividend slightly less than half of the previous
+dividend (if it was more than half, then we couldn't have found the maximum number that fit in by doubling! ).
+So how many of these searches did we need to do?
+Well, with the dividend at least halving after each one, there couldn't have been more
+than o(1log n) of them.
+So combined together, in the worst case, we have 0(1og n) searches with each search
+takingo (log n) time.
+This gives us O( (log n) (log n)) O(log2 n)
+Space Complexity : O(1)
+
+e.g
+Here do the left shift starting from
+2^0, 2^1, 2^2, ..., 2^k where 2^k <= n (dividend)
+
+2^k = n ==> k = log(n) (outer while loop)
+then we'll update the dividend, and loop will run again for the updated dividend
+in the worst case, that can also take around O(log(n)) time
+
+Overall time complexity = O(log(n) * log(n)) => O(log^2(n)) 
+in words big o of log square n.
+"""
+
 print(divide(10, 3))
