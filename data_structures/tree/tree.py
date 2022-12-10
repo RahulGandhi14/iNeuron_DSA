@@ -80,35 +80,36 @@ def postOrderIterative(root: Node):
             curr = None
 
 
-# Driver Code
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
-root.right.left = Node(6)
-root.right.right = Node(7)
+if __name__ == "__main__":
+    # Driver Code
+    root = Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
+    root.left.left = Node(4)
+    root.left.right = Node(5)
+    root.right.left = Node(6)
+    root.right.right = Node(7)
 
-print("PRE ORDER:", end=" ")
-preOrder(root)
-print(end="\n")
+    print("PRE ORDER:", end=" ")
+    preOrder(root)
+    print(end="\n")
 
-print("PRE ORDER ITERATIVE:", end=" ")
-preOrderIterative(root)
-print(end="\n")
+    print("PRE ORDER ITERATIVE:", end=" ")
+    preOrderIterative(root)
+    print(end="\n")
 
-print("IN ORDER:", end=" ")
-inOrder(root)
-print(end="\n")
+    print("IN ORDER:", end=" ")
+    inOrder(root)
+    print(end="\n")
 
-print("IN ORDER ITERATIVE:", end=" ")
-inOrderIterative(root)
-print(end="\n")
+    print("IN ORDER ITERATIVE:", end=" ")
+    inOrderIterative(root)
+    print(end="\n")
 
-print("POST ORDER:", end=" ")
-postOrder(root)
-print(end="\n")
+    print("POST ORDER:", end=" ")
+    postOrder(root)
+    print(end="\n")
 
-print("POST ORDER ITERATIVE:", end=" ")
-postOrderIterative(root)
-print(end="\n")
+    print("POST ORDER ITERATIVE:", end=" ")
+    postOrderIterative(root)
+    print(end="\n")
