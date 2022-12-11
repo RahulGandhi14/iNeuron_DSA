@@ -80,6 +80,28 @@ def postOrderIterative(root: Node):
             curr = None
 
 
+def postOrderIterativeApproach2(root: Node):
+    curr = root
+    stack1 = deque()
+    stack2 = deque()
+
+    stack1.append(curr)
+
+    while len(stack1) != 0:
+        curr = stack1.pop()
+        stack2.append(curr)
+        if curr.left:
+            stack1.append(curr.left)
+        if curr.right:
+            stack1.append(curr.right)
+
+    while len(stack2) != 0:
+        curr = stack2.pop()
+        print(curr.data, " ", end=" ")
+
+    print("\n")
+
+
 if __name__ == "__main__":
     # Driver Code
     root = Node(1)
@@ -113,3 +135,6 @@ if __name__ == "__main__":
     print("POST ORDER ITERATIVE:", end=" ")
     postOrderIterative(root)
     print(end="\n")
+
+    print("APPROACH2:", end=" ")
+    postOrderIterativeApproach2(root)
