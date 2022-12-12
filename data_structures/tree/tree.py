@@ -136,5 +136,5 @@ if __name__ == "__main__":
     postOrderIterative(root)
     print(end="\n")
 
-    print("APPROACH2:", end=" ")
+    print("POST ORDER ITERATIVE APPROACH2:", end=" ")
     postOrderIterativeApproach2(root)
